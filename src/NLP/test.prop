@@ -1,0 +1,55 @@
+#Location of the training file
+
+trainFile = training.tsv
+
+#Location where you would like to save (serialize to) your classifier;
+# (adding .gz suffix automatically gzips the file)
+
+serializeTo = news-model.ser.gz
+
+#Structure of your training file;
+# this tells the classifier that the word is in column 0 and the correct answer is in column 1
+
+map = word=0,answer=1
+
+#These are the features we'd like to train with some are discussed below, the rest can be
+#gleaned by looking at the NERFeatureFactory documentation
+
+useClassFeature=true
+useWord=true
+useNGrams=true
+
+#No ngrams will be included that do not contain either the beginning or end of the word
+
+useClassFeature=true
+useWord=true
+#useWordPairs=true
+useNGrams=true
+noMidNGrams=true
+maxNGramLeng=6
+usePrev=true
+useNext=true
+#useTags=true
+#useWordTag=true
+useLongSequences=true
+useSequences=true
+usePrevSequences=true
+useTypeSeqs=true
+useTypeSeqs2=true
+useTypeySequences=true
+useOccurrencePatterns=true
+useLastRealWord=true
+useNextRealWord=true
+#useReverse=false
+normalize=true
+# normalizeTimex=true
+wordShape=chris2useLC
+useDisjunctive=true
+disjunctionWidth=5
+#useDisjunctiveShapeInteraction=true
+#Word shape features
+
+useTypeSeqs=true
+useTypeSeqs2=true
+useTypeySequences=true
+wordShape=chris2useLC

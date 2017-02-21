@@ -1,0 +1,11 @@
+NLP : http://blog.thehumangeo.com/ner-intro.html
+
+Tokenizing input text :
+
+java -cp stanfordNlp/stanford-ner.jar:stanfordNlp/lib/joda-time.jar:stanfordNlp/lib/jollyday-0.4.7.jar:stanfordNlp/lib/slf4j-api.jar:lib/slf4j-simple.jar:stanfordNlp/lib/stanford-ner-resources.jar edu.stanford.nlp.process.PTBTokenizer "text.txt"  | perl -ne 'chomp; print "$_\tOTHER\n"' >> training.tsv
+
+Building classifier
+
+java -cp stanfordNlp/stanford-ner.jar:stanfordNlp/lib/joda-time.jar:stanfordNlp/lib/jollyday-0.4.7.jar:stanfordNlp/lib/slf4j-api.jar:stanfordNlp/lib/slf4j-simple.jar:stanfordNlp/lib/stanford-ner-resources.jar edu.stanford.nlp.ie.crf.CRFClassifier -prop test.prop
+
+
