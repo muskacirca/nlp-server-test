@@ -21,7 +21,7 @@ public class BasicNLPEngineTest {
 
     @Test
     public void test() {
-        engine.proceed("Je veux aller de Paris à Lille.");
+        engine.proceed("Je veux aller de Paris à Alfortville.");
     }
 
 }

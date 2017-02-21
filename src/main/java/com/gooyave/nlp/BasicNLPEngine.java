@@ -23,10 +23,11 @@ public class BasicNLPEngine {
 
         StanfordCoreNLP pipeline = new StanfordCoreNLP(
                 PropertiesUtils.asProperties(
-                        "annotators", "tokenize,ssplit,pos,lemma,ner,parse",
+                        "annotators", "tokenize, ssplit, pos, lemma, ner, regexner, parse",
                         "ssplit.isOneSentence", "true",
+                        "regexner.mapping", "model.txt",
                         "parse.model", "edu/stanford/nlp/models/lexparser/frenchFactored.ser.gz",
-                        "tokenize.language", "en"));
+                        "tokenize.language", "fr"));
 
         Annotation document = new Annotation(sentence);
 
@@ -61,5 +62,11 @@ public class BasicNLPEngine {
         // Both sentence and token offsets start at 1!
                 Map<Integer, CorefChain> graph =
                         document.get(CorefCoreAnnotations.CorefChainAnnotation.class);
+    }
+
+    void train() {
+
+
+
     }
 }
