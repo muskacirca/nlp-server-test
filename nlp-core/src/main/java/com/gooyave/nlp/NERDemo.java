@@ -107,7 +107,7 @@ public class NERDemo {
          assignments and an n-best list of classifications with probabilities.
       */
 
-            String[] example = {"Je veux aller de Paris à La Rochelle" };
+            String[] example = {"Je veux aller de Paris à Lille" };
             for (String str : example) {
                 System.out.println(classifier.classifyToString(str));
             }
